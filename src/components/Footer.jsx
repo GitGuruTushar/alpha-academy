@@ -4,7 +4,7 @@ import { site, whatsappLink } from '../data/site.js'
 import { Phone, Mail, MapPin, Clock, WhatsApp, Instagram } from './Icons.jsx'
 
 export default function Footer() {
-  const year = 2025
+  const year = new Date().getFullYear()
 
   return (
     <footer className="footer">
@@ -57,7 +57,6 @@ export default function Footer() {
             <li><Link to="/courses">Science 11th & 12th</Link></li>
             <li><Link to="/courses">IIT-JEE · NEET</Link></li>
             <li><Link to="/courses">GUJCET</Link></li>
-            <li><Link to="/courses">Foundation</Link></li>
           </ul>
         </div>
 

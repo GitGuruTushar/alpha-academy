@@ -32,7 +32,7 @@ export default function Home() {
             <p className="hero__lead">
               {site.name} is a coaching institute in Ankleshwar for classes 7th to 12th
               (GSEB &amp; CBSE, English medium) and entrance exams — IIT-JEE, NEET &amp;
-              GUJCET. Experienced faculty. Personalized attention. Real results.
+              GUJCET. Experienced faculty, personalized attention and a result-driven approach.
             </p>
 
             <div className="hero__cta">
@@ -59,10 +59,12 @@ export default function Home() {
           <Reveal className="hero__media" delay={120}>
             <div className="hero__frame">
               <img src={classroom} alt="Inside an Alpha Academy classroom in Ankleshwar" />
-              <div className="hero__badge hero__badge--offer">
-                <span className="hero__badge-k">1 Month</span>
-                <span className="hero__badge-v">FREE Coaching</span>
-              </div>
+              {offer.active && (
+                <div className="hero__badge hero__badge--offer">
+                  <span className="hero__badge-k">1 Month</span>
+                  <span className="hero__badge-v">FREE Coaching</span>
+                </div>
+              )}
               <div className="hero__badge hero__badge--exam">
                 <Icon name="target" />
                 <span>IIT-JEE · NEET</span>
@@ -93,7 +95,7 @@ export default function Home() {
             title="Programs for every step of the journey"
             subtitle="From building a strong school foundation to cracking the toughest entrance exams — there's a place for your child at Alpha Academy."
           />
-          <div className="grid grid--4 courses-grid">
+          <div className="grid grid--3 courses-grid">
             {courses.map((c, i) => (
               <Reveal key={c.id} delay={i * 80}>
                 <CourseCard course={c} />

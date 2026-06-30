@@ -21,14 +21,14 @@ export default function Courses() {
       <PageHero
         eyebrow="Our Courses"
         title="Programs designed to take students further"
-        subtitle="School foundation, science stream and entrance-exam coaching — all under one roof in Ankleshwar."
+        subtitle="School coaching, science stream and entrance-exam preparation — all under one roof in Ankleshwar."
       />
 
       <section className="section">
         <div className="container">
-          <div className="grid grid--2 courses-detailed">
+          <div className="grid grid--3 courses-detailed">
             {courses.map((c, i) => (
-              <Reveal key={c.id} delay={(i % 2) * 80}>
+              <Reveal key={c.id} delay={(i % 3) * 80}>
                 <CourseCard course={c} detailed />
               </Reveal>
             ))}

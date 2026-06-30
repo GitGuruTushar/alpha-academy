@@ -11,7 +11,6 @@ const courseOptions = [
   'IIT-JEE Preparation',
   'NEET Preparation',
   'GUJCET Preparation',
-  'Foundation Program',
   'Other / Not sure',
 ]
 
@@ -42,8 +41,10 @@ export default function Contact() {
     setSent(true)
   }
 
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&output=embed`
-  const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapsQuery)}`
+  // The academy isn't on Google yet, so we route to "Apple Plaza" (a listed
+  // landmark) — the academy is right behind it. Coordinates = exact pin.
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(site.mapsQuery)}&z=17&output=embed`
+  const directions = `https://www.google.com/maps/dir/?api=1&destination=${site.mapsCoords}`
 
   return (
     <>
@@ -156,8 +157,12 @@ export default function Contact() {
                     {site.address.line2},<br />
                     {site.address.city} – {site.address.pin}, {site.address.state}
                   </p>
+                  <p className="info-block__landmark">
+                    📍 Landmark: right behind <strong>Apple Plaza</strong> — search
+                    “Apple Plaza, Ankleshwar” and we're just behind it.
+                  </p>
                   <a href={directions} target="_blank" rel="noopener noreferrer" className="info-block__link">
-                    Open in Google Maps <ArrowRight />
+                    Get directions <ArrowRight />
                   </a>
                 </div>
               </div>

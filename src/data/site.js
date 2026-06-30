@@ -23,8 +23,12 @@ export const site = {
     state: 'Gujarat, India',
   },
 
-  // Used for the Google Maps embed + "Get Directions" link.
-  mapsQuery: 'Swastik Shoppers, Kapodra, Ankleshwar, Gujarat 393002',
+  // The academy itself isn't listed on Google yet, so the map + directions
+  // point to "Apple Plaza" — a Google-listed landmark the academy sits right
+  // behind. Coordinates are Apple Plaza's exact pin (reliable routing).
+  mapsLandmark: 'Apple Plaza, Ankleshwar',
+  mapsCoords: '21.600648,73.0181455',
+  mapsQuery: 'Apple Plaza, Ankleshwar GIDC, Gujarat 393002',
 
   // --- Timings ---
   timings: {
@@ -41,8 +45,14 @@ export const site = {
 }
 
 // --- Limited-time offer (July) ---
+// `active` is computed from the date: the offer automatically disappears
+// everywhere on the site after 31 July (IST). No code change needed —
+// after that date the announcement bar, the offer card and the hero badge
+// all stop showing on their own.
+const OFFER_END = new Date('2026-07-31T23:59:59+05:30')
+
 export const offer = {
-  active: true,
+  active: new Date() <= OFFER_END,
   badge: 'Limited Time Offer',
   title: '1 Month FREE Coaching',
   period: '1 July – 31 July',
@@ -57,7 +67,7 @@ export const courses = [
     icon: 'book',
     color: 'navy',
     classes: 'Classes 7th – 10th',
-    title: 'School Foundation (7th–10th)',
+    title: 'School Coaching (7th–10th)',
     boards: ['GSEB', 'CBSE'],
     medium: 'English Medium',
     short: 'A rock-solid base in every subject, built one concept at a time.',
@@ -65,7 +75,7 @@ export const courses = [
       'Complete GSEB & CBSE syllabus coverage, English medium',
       'Concept-first teaching with regular doubt-solving',
       'Periodic tests, worksheets and personal progress tracking',
-      'Early foundation for IIT-JEE / NEET aspirants',
+      'An early, strong base for IIT-JEE / NEET aspirants',
     ],
   },
   {
@@ -92,28 +102,12 @@ export const courses = [
     title: 'IIT-JEE · NEET · GUJCET',
     boards: ['JEE', 'NEET', 'GUJCET'],
     medium: 'Targeted exam coaching',
-    short: 'Exam-focused strategy, practice and test series for top ranks.',
+    short: 'Exam-focused strategy, practice and test series for competitive exams.',
     points: [
       'Syllabus-aligned coaching for IIT-JEE, NEET & GUJCET',
       'Topic-wise question banks and timed mock tests',
       'Shortcut techniques, accuracy and time management',
       'Regular performance analysis and mentoring',
-    ],
-  },
-  {
-    id: 'foundation',
-    icon: 'sparkles',
-    color: 'gold',
-    classes: 'Foundation',
-    title: 'Foundation Program',
-    boards: ['Strong Base'],
-    medium: 'Bright Future',
-    short: 'Early preparation that turns potential into real momentum.',
-    points: [
-      '"Strong Base, Bright Future" approach',
-      'Builds reasoning, aptitude and study habits early',
-      'Smooth transition into competitive exam preparation',
-      'Confidence-building from a young age',
     ],
   },
 ]
@@ -160,7 +154,7 @@ export const journey = [
     step: '03',
     icon: 'trophy',
     title: 'Succeed',
-    text: 'Boards, GUJCET, JEE and NEET — students walk in prepared and walk out with results.',
+    text: 'Boards, GUJCET, JEE and NEET — students walk in prepared, confident and ready to give their best.',
   },
 ]
 

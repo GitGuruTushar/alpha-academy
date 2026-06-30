@@ -35,7 +35,7 @@ export default function About() {
                 students of classes 7th to 12th across the GSEB and CBSE boards in
                 English medium, and prepare aspirants for the country's toughest
                 entrance exams — IIT-JEE, NEET and GUJCET. From building a strong
-                school foundation to sharpening exam strategy, we walk with each
+                base to sharpening exam strategy, we walk with each
                 student at every step.
               </p>
               <p className="lead-quote">“{site.motto}”</p>
@@ -64,9 +64,9 @@ export default function About() {
               <span className="mv-card__icon mv-card__icon--green"><Bulb /></span>
               <h3>Our Vision</h3>
               <p>
-                To be Ankleshwar's most trusted academy for school and entrance
-                preparation — a place known for a strong base, a brighter future,
-                and students who succeed because they were truly taught.
+                To be a place in Ankleshwar where students get a genuinely strong
+                base and a brighter future — where careful teaching, not shortcuts,
+                is what helps them succeed.
               </p>
             </Reveal>
           </div>
