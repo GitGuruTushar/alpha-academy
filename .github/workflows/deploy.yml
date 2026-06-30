@@ -24,7 +24,10 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # GitHub Pages serves under /alpha-academy/, so build with that base.
       - run: npm run build
+        env:
+          VITE_BASE: /alpha-academy/
       # SPA fallback: serve index.html for unknown routes (deep links / refresh)
       - run: cp dist/index.html dist/404.html
       - uses: actions/configure-pages@v5
