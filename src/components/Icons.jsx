@@ -1,0 +1,265 @@
+// Lightweight inline SVG icons (no external dependency).
+// Stroke icons inherit `currentColor`; brand icons (WhatsApp/Instagram) are filled.
+
+const s = {
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+}
+
+const wrap = (children, props) => (
+  <svg
+    viewBox="0 0 24 24"
+    width="1em"
+    height="1em"
+    aria-hidden="true"
+    focusable="false"
+    {...props}
+  >
+    {children}
+  </svg>
+)
+
+export const Phone = (p) =>
+  wrap(
+    <path
+      {...s}
+      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"
+    />,
+    p
+  )
+
+export const Mail = (p) =>
+  wrap(
+    <>
+      <rect {...s} x="2" y="4" width="20" height="16" rx="2" />
+      <path {...s} d="m22 7-10 6L2 7" />
+    </>,
+    p
+  )
+
+export const MapPin = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+      <circle {...s} cx="12" cy="10" r="3" />
+    </>,
+    p
+  )
+
+export const Clock = (p) =>
+  wrap(
+    <>
+      <circle {...s} cx="12" cy="12" r="9" />
+      <path {...s} d="M12 7v5l3 2" />
+    </>,
+    p
+  )
+
+export const Menu = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M3 6h18" />
+      <path {...s} d="M3 12h18" />
+      <path {...s} d="M3 18h18" />
+    </>,
+    p
+  )
+
+export const Close = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M18 6 6 18" />
+      <path {...s} d="m6 6 12 12" />
+    </>,
+    p
+  )
+
+export const Check = (p) =>
+  wrap(<path {...s} d="M20 6 9 17l-5-5" />, p)
+
+export const ArrowRight = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M5 12h14" />
+      <path {...s} d="m12 5 7 7-7 7" />
+    </>,
+    p
+  )
+
+export const ChevronRight = (p) =>
+  wrap(<path {...s} d="m9 18 6-6-6-6" />, p)
+
+export const Book = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path {...s} d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+    </>,
+    p
+  )
+
+export const Flask = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M9 3h6" />
+      <path {...s} d="M10 3v6.5L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 9.5V3" />
+      <path {...s} d="M7 14h10" />
+    </>,
+    p
+  )
+
+export const Target = (p) =>
+  wrap(
+    <>
+      <circle {...s} cx="12" cy="12" r="9" />
+      <circle {...s} cx="12" cy="12" r="5" />
+      <circle {...s} cx="12" cy="12" r="1.4" />
+    </>,
+    p
+  )
+
+export const Sparkles = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M12 3l1.8 4.6L18.5 9l-4.7 1.4L12 15l-1.8-4.6L5.5 9l4.7-1.4L12 3Z" />
+      <path {...s} d="M19 14l.7 1.9L21.5 17l-1.8.7L19 19.5l-.7-1.8L16.5 17l1.8-.7L19 14Z" />
+    </>,
+    p
+  )
+
+export const Trophy = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M8 21h8" />
+      <path {...s} d="M12 17v4" />
+      <path {...s} d="M7 4h10v5a5 5 0 0 1-10 0V4Z" />
+      <path {...s} d="M17 5h3v2a3 3 0 0 1-3 3" />
+      <path {...s} d="M7 5H4v2a3 3 0 0 0 3 3" />
+    </>,
+    p
+  )
+
+export const Graduation = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M22 10 12 5 2 10l10 5 10-5Z" />
+      <path {...s} d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5" />
+      <path {...s} d="M22 10v6" />
+    </>,
+    p
+  )
+
+export const Users = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle {...s} cx="9" cy="7" r="4" />
+      <path {...s} d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path {...s} d="M16 3.13A4 4 0 0 1 16 11" />
+    </>,
+    p
+  )
+
+export const Trending = (p) =>
+  wrap(
+    <>
+      <path {...s} d="m3 17 6-6 4 4 7-7" />
+      <path {...s} d="M17 8h4v4" />
+    </>,
+    p
+  )
+
+export const Shield = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+      <path {...s} d="m9 12 2 2 4-4" />
+    </>,
+    p
+  )
+
+export const Bulb = (p) =>
+  wrap(
+    <>
+      <path {...s} d="M9 18h6" />
+      <path {...s} d="M10 22h4" />
+      <path {...s} d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1v.2h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z" />
+    </>,
+    p
+  )
+
+export const Star = (p) =>
+  wrap(
+    <path
+      {...s}
+      d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 18.9 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9 2.9-6Z"
+    />,
+    p
+  )
+
+export const Quote = (p) =>
+  wrap(
+    <path
+      fill="currentColor"
+      d="M7.5 6C5 6 3 8 3 10.5S5 15 7.5 15c0 2-1.5 3-3 3.5l.7 1.5C8.5 19 10.5 16 10.5 12V9.5C10.5 7.5 9.6 6 7.5 6Zm9 0C14 6 12 8 12 10.5S14 15 16.5 15c0 2-1.5 3-3 3.5l.7 1.5C17.5 19 19.5 16 19.5 12V9.5C19.5 7.5 18.6 6 16.5 6Z"
+    />,
+    p
+  )
+
+export const Play = (p) =>
+  wrap(
+    <>
+      <circle {...s} cx="12" cy="12" r="10" />
+      <path fill="currentColor" stroke="none" d="M10 8.5v7l6-3.5-6-3.5Z" />
+    </>,
+    p
+  )
+
+// --- Brand icons (filled) ---
+export const WhatsApp = (p) =>
+  wrap(
+    <path
+      fill="currentColor"
+      d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"
+    />,
+    p
+  )
+
+export const Instagram = (p) =>
+  wrap(
+    <>
+      <rect {...s} x="2" y="2" width="20" height="20" rx="5.5" />
+      <circle {...s} cx="12" cy="12" r="4.2" />
+      <circle fill="currentColor" stroke="none" cx="17.4" cy="6.6" r="1.2" />
+    </>,
+    p
+  )
+
+// Icon lookup map for data-driven rendering
+export const iconMap = {
+  book: Book,
+  flask: Flask,
+  target: Target,
+  sparkles: Sparkles,
+  trophy: Trophy,
+  graduation: Graduation,
+  users: Users,
+  trending: Trending,
+  shield: Shield,
+  bulb: Bulb,
+  star: Star,
+  phone: Phone,
+  mail: Mail,
+  mappin: MapPin,
+  clock: Clock,
+  whatsapp: WhatsApp,
+  instagram: Instagram,
+}
+
+export function Icon({ name, ...rest }) {
+  const Cmp = iconMap[name] || Star
+  return <Cmp {...rest} />
+}
