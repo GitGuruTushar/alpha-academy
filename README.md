@@ -1,5 +1,7 @@
 # Alpha Academy — Website
 
+**🌐 Live site: https://gitgurutushar.github.io/alpha-academy/**
+
 The official website for **Alpha Academy**, a coaching institute in Ankleshwar, Gujarat
 (classes 7th–12th, GSEB & CBSE English medium, plus IIT-JEE, NEET & GUJCET).
 
@@ -30,10 +32,14 @@ npm run build    # outputs static files to dist/
 npm run preview  # preview the production build locally
 ```
 
-## Deploy (free)
-Drag the `dist/` folder onto **Netlify Drop** (https://app.netlify.com/drop), or connect
-this repo to **Netlify** or **Vercel** — config for both is already included
-(`public/_redirects`, `vercel.json`).
+## Hosting / deploy
+This repo auto-deploys to **GitHub Pages** on every push to `main`, via the workflow in
+`.github/workflows/deploy.yml`. Live at https://gitgurutushar.github.io/alpha-academy/.
+
+Just edit, commit, and `git push` — the site rebuilds and updates itself in ~1 minute.
+
+(Config for **Netlify** / **Vercel** is also included — `public/_redirects`, `vercel.json` —
+if you ever want a cleaner root URL or a custom domain.)
 
 ## Editing content
 Almost everything is in one file: **`src/data/site.js`**
